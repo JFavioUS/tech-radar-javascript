@@ -1,9 +1,12 @@
 const express = require('express')
+const cors = require('cors')
 const path = require('path')
 
 const port = process.env.PORT || 80
 
 const app = express()
+
+app.use(cors)
 
 app.use(express.static(path.join(__dirname, '../dist')))
 
