@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "build:dev": "webpack --mode development --config webpack.dev.js",
-    "build:prod": "webpack --mode production --config webpack.prod.js",
+    "build": "webpack --mode production --config webpack.prod.js",
     "dev": "webpack-dev-server --mode development --config webpack.dev.js",
     "test": "jasmine",
     "test:e2e": "cypress run --env host=$TEST_URL",
     "lint-prettier:check": "eslint . && prettier --check .",
     "lint-prettier:fix": "eslint . --fix && prettier --write .",
-    "start": "npm run build:prod & node src/index.js",
+    "start": "node src/",
     "start:cypress": "cypress open --env host=$TEST_URL,TEST_ENV=$TEST_ENV",
     "coverage": "nyc npm run test",
     "quality": "npm run lint-prettier:check && npm run coverage"
