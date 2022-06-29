@@ -16,6 +16,8 @@ RUN npm install
 
 COPY . ./
 
+EXPOSE 80
+
 # Override parent node image's entrypoint script (/usr/local/bin/docker-entrypoint.sh),
 # which tries to run CMD as a node command
 ENTRYPOINT []
