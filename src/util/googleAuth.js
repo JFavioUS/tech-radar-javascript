@@ -2,15 +2,15 @@
 const d3 = require('d3')
 
 // Client ID and API key from the Developer Console
-var CLIENT_ID = '1003021289471-k0d1r9pjlcb43bibvirsepssnp43c534.apps.googleusercontent.com'
-var API_KEY = 'AIzaSyDgEokvTt4-XfKYkXV1WKIWJqvpHsIROtg'
+var CLIENT_ID = process.env.CLIENT_ID
+// var API_KEY = process.env.API_KEY
 
 // Array of API discovery doc URLs for APIs used by the quickstart
 var DISCOVERY_DOCS = ['https://sheets.googleapis.com/$discovery/rest?version=v4']
 
 // Authorization scopes required by the API multiple scopes can be
 // included, separated by spaces.
-var SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
+var SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
 const GoogleAuth = function () {
   const self = {}
@@ -71,7 +71,7 @@ const GoogleAuth = function () {
   self.initClient = function () {
     gapi.client
       .init({
-        apiKey: API_KEY,
+        apiKey: 'AIzaSyDgEokvTt4-XfKYkXV1WKIWJqvpHsIROtg',
         clientId: CLIENT_ID,
         discoveryDocs: DISCOVERY_DOCS,
         scope: SCOPES,

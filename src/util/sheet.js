@@ -12,8 +12,8 @@ const Sheet = function (sheetReference) {
   })()
 
   self.validate = function (callback) {
-    var apiKeyEnabled = process.env.API_KEY || false
-    var feedURL = 'https://docs.google.com/spreadsheets/d/' + '10FDHadWrPIcSUk_XLtuofByaSQMdgJPIDL6pojTJeV4'
+    var apiKeyEnabled = 'AIzaSyDgEokvTt4-XfKYkXV1WKIWJqvpHsIROtg' || process.env.API_KEY || false
+    var feedURL = 'https://docs.google.com/spreadsheets/d/' + self.id
 
     // TODO: Move this out (as HTTPClient)
     var xhr = new XMLHttpRequest()

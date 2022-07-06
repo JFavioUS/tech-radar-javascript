@@ -79,7 +79,7 @@ const GoogleSheet = function (sheetReference, sheetName) {
 
   self.build = function () {
     var sheet = new Sheet(sheetReference)
-    sheet.validate(function (error, apiKeyEnabled) {
+    sheet.validate(function (error, apiKeyEnabled = 'AIzaSyDgEokvTt4-XfKYkXV1WKIWJqvpHsIROtg') {
       if (error instanceof SheetNotFoundError) {
         plotErrorMessage(error)
         return
@@ -105,7 +105,7 @@ const GoogleSheet = function (sheetReference, sheetName) {
     plotRadar(documentTitle + ' - ' + sheetName, blips, sheetName, sheetNames)
   }
 
-  self.authenticate = function (force = false, apiKeyEnabled, callback) {
+  self.authenticate = function (force = false, apiKeyEnabled = 'AIzaSyDgEokvTt4-XfKYkXV1WKIWJqvpHsIROtg', callback) {
     if (!apiKeyEnabled) {
       GoogleAuth.loadGoogle(function () {
         GoogleAuth.login(() => {
