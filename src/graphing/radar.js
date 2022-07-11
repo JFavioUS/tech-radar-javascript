@@ -340,6 +340,15 @@ const Radar = function (size, radar) {
       blipItemDescription.append('p').html(blip.description())
     }
 
+    var blipItemReferences = blipItemDescription
+      .append('div')
+      .attr('id', 'blip-references-' + blip.number())
+      .attr('class', 'blip-item-references')
+    blipItemReferences.append('h4').html('References:')
+    if (blip.references()) {
+      blipItemReferences.append('p').html(blip.references())
+    }
+
     var mouseOver = function () {
       d3.selectAll('g.blip-link').attr('opacity', 0.3)
       group.attr('opacity', 1.0)

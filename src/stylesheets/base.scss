@@ -357,6 +357,7 @@ body {
           .blip-item-description {
             max-height: 0;
             overflow: hidden;
+            overflow-y: scroll;
             width: 300px;
 
             p {
@@ -374,6 +375,9 @@ body {
             &.expanded {
               transition: max-height 0.5s ease 0.2s;
               max-height: 1000px;
+            }
+
+            .blip-item-references {
             }
           }
         }
